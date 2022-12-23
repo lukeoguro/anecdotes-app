@@ -29,22 +29,24 @@ const CreateNew = (props) => {
 
   return (
     <div>
-      <h2>create a new anecdote</h2>
+      <h2>Create a new anecdote</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          content
+          Content:
           <input {...content} reset='' />
         </div>
         <div>
-          author
+          Author:
           <input {...author} reset='' />
         </div>
         <div>
-          url for more info
+          Url for more info:
           <input {...info} reset='' />
         </div>
-        <button>create</button>
-        <button onClick={handleReset}>reset</button>
+        <div style={{ paddingTop: "1em" }}>
+          <button>Create</button>
+          <button onClick={handleReset}>Reset</button>
+        </div>
       </form>
     </div>
   )

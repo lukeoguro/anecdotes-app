@@ -1,6 +1,6 @@
 const Notification = ({ notification }) => {
   return (
-    <p>{notification}</p>
+    <p style={{ backgroundColor: "lightgreen" }}>{notification}</p>
   )
 }
 

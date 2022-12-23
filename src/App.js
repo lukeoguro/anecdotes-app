@@ -5,7 +5,6 @@ import Menu from './components/Menu'
 import Anecdote from './components/Anecdote'
 import AnecdoteList from './components/AnecdoteList'
 import About from './components/About'
-import Footer from './components/Footer'
 import CreateNew from './components/CreateNew'
 import Notification from './components/Notification'
 
@@ -33,22 +32,11 @@ const App = () => {
   const addNew = (anecdote) => {
     anecdote.id = Math.round(Math.random() * 10000)
     setAnecdotes(anecdotes.concat(anecdote))
-    setNotification(`"${anecdote.content}" created!`)
+    setNotification(`New anecdote "${anecdote.content}" created!`)
     setTimeout(() => setNotification(''), 5000)
   }
 
   const anecdoteById = (id) => anecdotes.find(a => a.id === id)
-
-  const vote = (id) => {
-    const anecdote = anecdoteById(id)
-
-    const voted = {
-      ...anecdote,
-      votes: anecdote.votes + 1
-    }
-
-    setAnecdotes(anecdotes.map(a => a.id === id ? voted : a))
-  }
 
   const match = useMatch('/anecdotes/:id')
   const anecdote = match ? anecdoteById(Number(match.params.id)) : null
@@ -64,7 +52,6 @@ const App = () => {
         <Route path="/create" element={<CreateNew addNew={addNew} />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      <Footer />
     </div>
   )
 }

@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom'
 
 const Menu = () => {
   const padding = {
-    paddingRight: 5
+    paddingRight: "0.5em"
   }
   return (
     <div>
-      <Link to='/' style={padding}>anecdotes</Link>
-      <Link to='/create' style={padding}>create new</Link>
-      <Link to='/about' style={padding}>about</Link>
+      <Link to='/' style={padding}>Home</Link>
+      <Link to='/create' style={padding}>Create new</Link>
+      <Link to='/about' style={padding}>About</Link>
     </div>
   )
 }
